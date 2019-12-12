@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= "DB"
+  table
+    thead
+        th= "Id"
+        th= "On/Off"
+        th= "Nominel Use"
+        th= "Actual Use"
+        th= "Light Percent"
+        th= "Hardware Type"
+        th= "Software Version"
+        th= "Created At"
+        th= "Updated At"
+    tbody
+        each lightbulp in lightbulps
+            tr
+                td= lightbulp.id
+                td= lightbulp.on_or_off
+                td= lightbulp.nominel_use
+                td= lightbulp.actual_use
+                td= lightbulp.light_percent
+                td= lightbulp.hardware_type
+                td= lightbulp.software_version
+                td= lightbulp.createdAt
+                td= lightbulp.updatedAt

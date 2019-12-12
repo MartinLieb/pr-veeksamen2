@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= "DB"
+    - var bulbs = ["Light1", "Light2", "Light3"];
+    - var bulbs2 = [{"id" : 1, "nominelUse" : 30 }, {"id" : 2, "nominelUse" : 50 }];
+    - bulbs2 = #{lightbulps}
+        div
+        h1 IKEA Pærer
+        table
+            tr
+            thead
+            th X
+            th ID
+            th USE
+            for obj in bulbs2
+                tr
+                    td Pære --
+                    td= obj.id
+                    td= obj.nominelUse
