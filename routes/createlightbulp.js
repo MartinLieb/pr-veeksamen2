@@ -23,7 +23,7 @@ const body = {
 };
 
 
-const newUser = lightbulps.create(body);
+lightbulps.create(body);
 
 //find the user
 

@@ -8,7 +8,9 @@ var indexRouter = require('./routes/index');
 var dbjsonRouter = require('./routes/dbjson');
 var dbRouter = require('./routes/db');
 var usersRouter = require('./routes/users');
-var lightbulpRouter = require('./routes/lightbulp');
+var createlightbulpRouter = require('./routes/createlightbulp');
+var APIrouter = require('./routes/API/API')
+var converterrouter = require('./routes/converter')
 
 var app = express();
 
@@ -24,10 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/lightbulp', lightbulpRouter);
+app.use('/createlightbulp', createlightbulpRouter);
 app.use('/db', dbRouter);
 app.use('/dbjson', dbjsonRouter);
-
+app.use('/API', APIrouter);
+app.use('/converter', converterrouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
