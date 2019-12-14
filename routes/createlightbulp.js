@@ -7,11 +7,26 @@ const faker = require('faker');
 router.get('/', function(req, res, next) {
 
 const on_or_off = faker.random.boolean();
-const nominel_use = faker.random.number();
-const actual_use = faker.random.number();
-const light_percent = faker.random.number();
-const hardware_type = faker.random.number();
-const software_version = faker.random.number();
+const nominel_use = faker.random.number({
+  'min': 0,
+  'max': 100
+});
+const actual_use = faker.random.number({
+  'min': 0,
+  'max': 100
+});
+const light_percent = faker.random.number({
+  'min': 0,
+  'max': 100
+});
+const hardware_type = faker.random.number({
+  'min': 1,
+  'max': 3
+});
+const software_version = faker.random.number({
+  'min': 1,
+  'max': 5
+});
 
 const body = {
   on_or_off: on_or_off, 
